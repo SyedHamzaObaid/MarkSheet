@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    padding: 0px;
+    margin: 0px;
+
+}
+.container {
+    width: 700px;
+    
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    background: #eee;
+    
+    
+
+}
+.header {
+    /* background: greenyellow; */
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+.content {
+    background: rgb(121, 199, 223);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+#heading1 {
+    text-align: center;
+}
+#heading2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.table {
+    /* border: 1px solid black; */
+    width: 690px;
+    margin: 0px;
+    padding: 2px;
+}
+td {
+    padding: 4px  4px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+#table2 {
+    text-align: center;
+}
+#button {
+    background: none;
+    color: rgb(5, 5, 5);
+    border-radius: 4px;
+    width: 240px;
+    height: 80px;
+    font-size: 18px;
+    border: 1px solid #338033;
+    transition: .6s;
+    overflow: hidden;
+}
+#button:focus{
+    outline: none;
+}
+#button:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255,255,255,.5);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5s;
+    filter: blur(30px);
+    transform: translateX(-130px) skewX(-15deg);
+
+}
+#button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255,255,255,.2);
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter: blur(30px);
+    transform: translate(-100px) scaleX(-15deg);
+}
+#button:hover {
+    background: #1dc097;
+    cursor: pointer;
+    color: #eee;
+}
+#button:hover:before {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: .6;
+    transition: .7s;
+}
+
+#button:hover:after {
+    transform: translateX(300px) skewX(-15deg);
+    opacity: 1;
+    
+    transition: .7s;
+}
+
+.grade {
+    display: flex;
+    
+}
+.grade1, .grade2, .grade3, .grade4 {
+    margin: 20px auto;
+}
+.grade2, .grade4 {
+    border: 3px solid black;
+    padding: 5px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+ul li {
+    list-style: none;
+}
+.footer div {
+    padding: 50px 30px 30px 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+
+            <div>SERIAL NO. <br> <h3>305646</h3></div>
+            <div id="heading1"><h1> Board of Intermediate Education Karachi</h1>STATEMENT OF MARKS <br> <b>H.S.C Part I (Intermediate Education(Annual-2021)) </b><hr><h2 id="heading2">SCIENCE GENERAL</h2></div>
+            <div></div>
+
+        </div>
+        <div class="content">
+            <table class="table">
+                <tr>
+                    <td>EXAMINATION</td>
+                    <td colspan="3" id="annual" ></td>
+                    <th id="annual"></th>
+                    </tr>
+                    <tr></tr>
+                    <td>ROLL NUMBER</td>
+                    <td colspan="3" id="rollno" ></td>
+                    <th id="rollno"></th>
+                </tr>
+                <tr>
+                    <td>NAME</td>
+                    <td colspan="3" id="userName"></td>
+                    
+                </tr>
+                
+                <tr>
+                    <td>FATHER'S NAME</td>
+                    <td colspan="3" id="userName2"></td>
+                    
+                </tr>
+                <tr>
+                    <td>SCHOOL NAME</td>
+                    <td colspan="3" id="schoolname"></td>
+                    
+                </tr>
+                <tr>
+                    <td>NAME OF COLLEGE</td>
+                    <td colspan="3" id="collegename"></td>
+                    
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="3"></td>
+                    
+                </tr>
+            </table>
+
+            <table border="1px" id="table2">
+                <tr>
+                    <td rowspan="2">S.NO</td>
+                    <td colspan="6" rowspan="2">SUBJECTS</td>
+                    <td colspan="2">Max.Marks</td>
+                    <td colspan="2">Min.Marks</td>     
+                    <td colspan="4">OBTAINED MARKS</td>
+                    <td colspan="3" rowspan="2">REMARKS</td>
+                </tr>
+                <tr>  
+                    <td>TH</td>
+                    <td>PR</td>
+                    <td>TH</td>
+                    <td>PR</td>
+                    <td>TH</td>
+                    <td>PR</td>
+                    <td colspan="2">TOTAL</td>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td colspan="6">URDU NORMAL</td>
+                    <td>75</td>
+                    <td>__</td>
+                    <td>25</td>
+                    <td>__</td>
+                    <td id="sindhimarks"></td>
+                    <td>__</td>
+                    <td colspan="2" id="sindhimarks2"></td>
+                    <td colspan="3" rowspan="10"></td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td colspan="6">SINDHI SALEES </td>
+                    <td>75</td>
+                    <td>__</td>
+                    <td>25</td>
+                    <td>__</td>
+                    <td id="urdumarks"></td>
+                    <td>__</td>
+                    <td colspan="2" id="urdumarks2"></td>
+                    <td colspan="3"></td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td colspan="6">ENGLISH PAPER I</td>
+                    <td>75</td>
+                    <td>__</td>
+                    <td>25</td>
+                    <td>__</td>
+                    <td id="englishImarks"></td>
+                    <td>__</td>
+                    <td colspan="2" id="englishImarks2"></td>
+                    
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td colspan="6">ENGLISH PAPER II</td>
+                    <td>75</td>
+                    <td>__</td>
+                    <td>25</td>
+                    <td>__</td>
+                    <td id="englishIImarks"></td>
+                    <td>__</td>
+                    <td colspan="2" id="englishIImarks2"></td>
+                    
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td colspan="6">CHEMISTRY</td>
+                    <td>75</td>
+                    <td>__</td>
+                    <td>25</td>
+                    <td>__</td>
+                    <td id="pstmarks"></td>
+                    <td>__</td>
+                    <td colspan="2" id="pstmarks2"></td>
+                    
+                </tr>
+                <tr>
+                    <td>06</td>
+                    <td colspan="6">COMPUTER STUDIES</td>
+                    <td>75</td>
+                    <td>25</td>
+                    <td>25</td>
+                    <td>08</td>
+                    <td id="computermarks"></td>
+                    <td id="computerpracmarks"></td>
+                    <td colspan="2" id="comptotalmarks"></td>
+                    
+                </tr>
+                <tr>
+                    <td>07</td>
+                    <td colspan="6">PAKISTAN STUDIES</td>
+                    <td>85</td>
+                    <td>15</td>
+                    <td>28</td>
+                    <td>05</td>
+                    <td id="chemistrymarks"></td>
+                    <td id="chemistrypracmarks"></td>
+                    <td colspan="2" id="chemtotalmarks"></td>
+                    
+                </tr>
+                 <tr>
+                    <td>08</td>
+                    <td colspan="6">MATHEMATICS</td>
+                    <td>75</td>
+                    <td>__</td>
+                    <td>25</td>
+                    <td>__</td>
+                    <td id="islmarks"></td>
+                    <td>__</td>
+                    <td colspan="2" id="islmarks2"></td>
+                    
+                </tr>
+                <tr>
+                    <td>09</td>
+                    <td colspan="6">ISLAMIA</td>
+                    <td>100</td>
+                    <td>__</td>
+                    <td>33</td>
+                    <td>__</td>
+                    <td id="mathsmarks"></td>
+                    <td>__</td>
+                    <td colspan="2" id="mathsmarks2"></td>
+                    
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td colspan="6">PHYSICS</td>
+                    <td>85</td>
+                    <td>15</td>
+                    <td>28</td>
+                    <td>05</td>
+                    <td id="physicsmarks"></td>
+                    <td id="physicspracmarks"></td>
+                    <td colspan="2" id="phytotalmarks"></td>
+                    
+                </tr>
+              
+            </table>
+
+            <div class="grade">
+                <div class="grade1">GRAND TOTAL</div>
+                <div class="grade2" id="TotalMarks"></div>
+                <div class="grade3">GRADE</div>
+                <div class="grade4" id="gradeyouget"></div>
+            </div>
+           
+        </div>
+        <div class="footer">
+               <div>
+                  <ul>  
+                       <li id="dateofissue"></li>
+                       <li><b>Date & Time of Issue</b></li>
+                  </ul>
+               </div>
+               <div>
+                <hr>
+                Controller of Examination
+               </div>
+               <div>
+                <hr>
+                Assistant Director System
+               </div>
+        </div>
+
+    </div> 
+
+
+    <button id="button" onclick="window.print()">Print your MarksSheet</button>
+    <script src="./app.js"></script>
+</body>
+</html>
